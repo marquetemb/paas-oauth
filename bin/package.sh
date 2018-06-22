@@ -1,5 +1,11 @@
 #!/bin/bash -e
 
+if [[ -z "$1" ]]; then
+    export VERSION=$(cat ../$BASEDIR/../VERSION)
+else
+    export VERSION=$1
+fi
+
 . bin/commons.sh
 
 mkdir -p $GOPATH/src/github.com/stratio/paas-oauth
